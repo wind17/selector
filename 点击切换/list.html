@@ -38,14 +38,6 @@
   </div>
 <script src="jquery.js"></script>
 <script>
-//  $('#u1').on('click','li a', function(e){
-//    e.preventDefault();
-//    //修改附加导航中的激活项
-//    $(this).parent().addClass('active').siblings('.active').removeClass('active');
-//    //右侧主体内容切换
-//    var id = $(this).attr('href');
-//    $(id).addClass('active').siblings('.active').removeClass('active');
-//  })
   $('#u1').on('click','li a',function(e){
     e.preventDefault(); //阻止跳转
     $(this).parent().addClass('active').siblings('.active').removeClass('active'); //清除兄弟元素样式
