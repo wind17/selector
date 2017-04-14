@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #d1{
+      float:right;
+    }
+    #d2,#d3,#d4{
+      width: 200px;
+      height: 200px;
+      background:#ddd;
+      float:left;
+    }
+    #d1>div{
+      display:none;
+    }
+    #d1>div.active {
+      display: block;
+    }
+    #u1 li.active a {
+      color: #e4393c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<ul id="u1">
+  <li class="active"><a href="#d2">消费统计(原生版)</a></li>
+  <li><a href="#d3">消费统计(FC版)</a></li>
+  <li><a href="#d4">幸运抽奖</a></li>
+</ul>
+<div id="d1">
+  <div id="d2" class="active">消费统计(原生版)</div>
+    <div id="d3">消费统计(FC版)</div>
+    <div id="d4">幸运抽奖</div>
+  </div>
+<script src="jquery.js"></script>
+<script>
+//  $('#u1').on('click','li a', function(e){
+//    e.preventDefault();
+//    //修改附加导航中的激活项
+//    $(this).parent().addClass('active').siblings('.active').removeClass('active');
+//    //右侧主体内容切换
+//    var id = $(this).attr('href');
+//    $(id).addClass('active').siblings('.active').removeClass('active');
+//  })
+  $('#u1').on('click','li a',function(e){
+    e.preventDefault(); //阻止跳转
+    $(this).parent().addClass('active').siblings('.active').removeClass('active'); //清除兄弟元素样式
+    var id=$(this).attr('href');   //获得目标id
+    $(id).addClass('active').siblings('.active').removeClass('active');//给目标添加样式且清除其兄弟元素样式
+  })
+</script>
+</body>
+</html>
